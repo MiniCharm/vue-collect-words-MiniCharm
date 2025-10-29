@@ -12,9 +12,43 @@
   <body>
     <div id="app">
       <div class="nav-bar"></div>
-
       <h1>{{ intro }}</h1>
-      
+      <div class="main-content">
+      <div class="CollectWords">
+        <h2>Colllect words</h2>
+          <div id="inputDiv">
+          <input v-model="Word" type="text" placeholder="Type a word">
+          <button v-model="Word" @click="Save">Save</button>
+          <button @click="Show">Show</button>
+          <button @click="Clear">Clear</button>
+          <div id="result"> 
+            {{Message}}  
+          </div>
+        </div>
+        
+      </div>
+
+      <div class="Calculator">
+        <h2>Calculator</h2>
+        <div class="row">
+          <div>
+            <div class="column">
+              <input type="number" v-model="Number1" placeholder="type a number">
+            </div>
+            <div class="column">
+              <p>+</p>
+            </div>
+            <div class="column">
+              <input type="number" v-model="Number2" placeholder="type a number"> <button @click="Add">=</button>
+            </div>
+            <div class="column">
+              <p>{{Result}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+
     </div>
 
     <!-- Import App -->
