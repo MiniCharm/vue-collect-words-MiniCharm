@@ -45,6 +45,7 @@ button{
 }
 .column{
   float:left;
+  padding-right: 5px;
 }
 
 .main-content{

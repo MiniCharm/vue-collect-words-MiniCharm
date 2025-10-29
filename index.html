@@ -21,8 +21,9 @@
           <button v-model="Word" @click="Save">Save</button>
           <button @click="Show">Show</button>
           <button @click="Clear">Clear</button>
-          <div id="result"> 
-            {{Message}}  
+          <! --v-html:Fortæller Vue, at Message skal tolkes som html  -->
+          <div v-html="Message"id="result"> 
+            {{Message}} 
           </div>
         </div>
         
@@ -36,12 +37,17 @@
               <input type="number" v-model="Number1" placeholder="type a number">
             </div>
             <div class="column">
-              <p>+</p>
+              <select v-model="Operation">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+              </select>
             </div>
             <div class="column">
-              <input type="number" v-model="Number2" placeholder="type a number"> <button @click="Add">=</button>
+              <input type="number" v-model="Number2" placeholder="type a number"> <button @click="SwitchOperation">=</button>
             </div>
-            <div class="column">
+            <div class="column"></div>
               <p>{{Result}}</p>
             </div>
           </div>
